@@ -14,7 +14,7 @@ If you want to run it more like a command or program, you can create a bash scri
 #!/bin/bash
 
 # Run gui.py in the background using the Conda environment
-conda run --no-capture-output -n conda_env ~/yourpathhere/taildropgui.py > ~/yourpathhere/gui_output.log 2>&1 &
+conda run --no-capture-output -n conda_env python ~/yourpathhere/taildropgui.py > ~/yourpathhere/gui_output.log 2>&1 &
 
 # Print the PID of the background process
 echo "GUI started with PID: $! \nYou can kill using \"kill < $ >\" or pkill -f taildropgui.py"
