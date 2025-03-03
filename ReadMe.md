@@ -28,7 +28,7 @@ chmod +x taildropgui.sh
 
 to make it executable.
 
-Note, because tailscale requires sudo to run, you may have to do the following:
+***Note***, because tailscale requires sudo to run, you may have to do the following:
   
 ```bash
 sudo visudo

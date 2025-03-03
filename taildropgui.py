@@ -9,6 +9,7 @@ from PyQt5.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout,
                             QMessageBox, QProgressBar, QSystemTrayIcon, QMenu, QAction)
 from PyQt5.QtCore import Qt, QThread, pyqtSignal, QMimeData, QSettings
 from PyQt5.QtGui import QIcon, QDragEnterEvent, QDropEvent
+from datetime import datetime
 
 class FileTransferWorker(QThread):
     """Worker thread to handle file transfers in the background"""
@@ -418,5 +419,8 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = TailscaleFileTransferGUI(script_directory)
     window.show()
-    print("Exiting")
-    sys.exit(app.exec_())
+    print(f"Opened on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    try:
+        sys.exit(app.exec_())
+    finally:
+        print(f"Exiting on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
